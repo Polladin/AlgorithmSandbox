@@ -47,3 +47,31 @@ std::vector<int> generate_random_int_seq( unsigned sizeOfArray, int maxInt )
 
   return res;
 }
+
+
+void build_heap( std::vector<int> & arr )
+{
+  // Make a heap
+  for ( unsigned i = 0; i < arr.size() / 2; ++i )
+    max_heapify( arr, arr.size(), arr.size() / 2 - i);
+}
+
+
+void max_heapify( std::vector<int> & heap, const unsigned heapSize, const unsigned idx )
+{
+  unsigned left = idx * 2;
+  unsigned right = idx * 2 + 1;
+  unsigned newIdx = idx;
+
+  if ( left < heapSize && heap[ newIdx ] < heap[ left ] )
+    newIdx = left;
+
+  if ( right < heapSize && heap[ newIdx ] < heap[ right ] )
+    newIdx = right;
+
+  if ( newIdx != idx )
+  {
+    std::swap( heap[ idx ], heap[ newIdx ] );
+    max_heapify( heap, heapSize, newIdx );
+  }
+}

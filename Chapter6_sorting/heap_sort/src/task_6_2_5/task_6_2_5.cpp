@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-void max_heapify( std::vector<int> & heap, unsigned idx )
+void max_heapify_loop( std::vector<int> & heap, unsigned idx )
 {
   bool stopProcess = false;
 
@@ -41,7 +41,7 @@ int main()
   // Make a heap
   for ( unsigned i = 0; i < arr.size() / 2; ++i )
   {
-    max_heapify( arr, arr.size() / 2 - i );
+    max_heapify_loop( arr, arr.size() / 2 - i );
   }
 
   // Print heap

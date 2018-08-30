@@ -8,7 +8,7 @@
 #include <iomanip>
 
 
-void max_heapify(std::vector<int> & heap, const unsigned idx)
+void max_heapify_req( std::vector<int> & heap, const unsigned idx )
 {
   unsigned left = idx * 2;
   unsigned right = idx * 2 + 1;
@@ -35,7 +35,7 @@ int main()
 
   // Make a heap
   for ( unsigned i = 0; i < arr.size() / 2; ++i )
-    max_heapify( arr, arr.size() / 2 - i );
+    max_heapify_req( arr, arr.size() / 2 - i );
 
   // Print heap
   print_heap( arr );
