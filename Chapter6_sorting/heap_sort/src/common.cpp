@@ -49,6 +49,24 @@ std::vector<int> generate_random_int_seq( unsigned sizeOfArray, int maxInt )
 }
 
 
+bool is_heap( const std::vector<int> & arr, unsigned idx )
+{
+  if ( idx >= arr.size() )
+    return true;
+
+  unsigned left = idx * 2;
+  unsigned right = idx * 2 + 1;
+
+  if ( left < arr.size() && arr[ idx ] < arr[ left ] )
+    return false;
+
+  if ( right < arr.size() && arr[ idx ] < arr[ right ] )
+    return false;
+
+  return is_heap( arr, left ) && is_heap( arr, right );
+}
+
+
 void build_heap( std::vector<int> & arr )
 {
   // Make a heap

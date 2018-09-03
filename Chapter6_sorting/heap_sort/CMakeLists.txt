@@ -12,6 +12,12 @@ file(GLOB MAX_HEAPIFY_SRC      			src/max_heapify/*.cpp)
 file(GLOB TASK_6_2_5_HEADER  			src/task_6_2_5/*.h)
 file(GLOB TASK_6_2_5_SRC      			src/task_6_2_5/*.cpp)
 
+file(GLOB TASK_6_5_8_HEADER  			src/task_6_5_8/*.h)
+file(GLOB TASK_6_5_8_SRC      			src/task_6_5_8/*.cpp)
+
+file(GLOB TASK_6_5_9_HEADER  			src/task_6_5_9/*.h)
+file(GLOB TASK_6_5_9_SRC      			src/task_6_5_9/*.cpp)
+
 file(GLOB HEAP_SORT_HEADER  			src/heap_sort/*.h)
 file(GLOB HEAP_SORT_SRC      			src/heap_sort/*.cpp)
 
@@ -33,6 +39,16 @@ add_executable(MaxHeapify ${COMMON_SRC} ${COMMON_HEADER}
 
 add_executable(Task_6_2_5 ${COMMON_SRC} ${COMMON_HEADER} 
                           ${TASK_6_2_5_SRC} ${TASK_6_2_5_HEADER})
+                          
+################### Task 6.5.8 ##########################################
+
+add_executable(Task_6_5_8 ${COMMON_SRC} ${COMMON_HEADER} 
+                          ${TASK_6_5_8_SRC} ${TASK_6_5_8_HEADER})
+
+################### Task 6.5.9 ##########################################
+
+add_executable(Task_6_5_9 ${COMMON_SRC} ${COMMON_HEADER} 
+                          ${TASK_6_5_9_SRC} ${TASK_6_5_9_HEADER})                          
 
 ################### Heap Sort ##########################################
 
