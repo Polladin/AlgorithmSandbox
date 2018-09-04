@@ -23,7 +23,7 @@ void max_heapify_req( std::vector<int> & heap, const unsigned idx )
   if ( newIdx != idx )
   {
     std::swap( heap[ idx ], heap[ newIdx ] );
-    max_heapify( heap, newIdx );
+    max_heapify( heap, heap.size(), newIdx );
   }
 }
 
