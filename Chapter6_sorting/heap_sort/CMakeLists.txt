@@ -7,7 +7,8 @@ set(PROJECTS_TO_CREATE "max_heapify"
                        "task_6_2_5"
                        "task_6_5_8"
                        "task_6_5_9"
-                       "task_6_2")
+                       "task_6_2"
+                       "young_table")
 
 ##################### Definitions #################################
 
