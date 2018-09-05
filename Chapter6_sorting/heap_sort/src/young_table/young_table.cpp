@@ -95,6 +95,13 @@ bool find_val(int val, t_table & tab, std::size_t row, std::size_t col )
     else
       return find_val( val, tab, row, col - 1 );
   }
+  else
+  {
+    if ( row + 1 == tab.size() )
+      return false;
+    else
+      return find_val( val, tab, row + 1, col );
+  }
 }
 
 
@@ -132,6 +139,15 @@ int main()
   std::cout << std::endl;
 
   print_table( table );
+
+  std::cout << "\n\nInsert into table 15, 20, 55" << std::endl;
+  for ( auto el : { 15, 20 ,55 } )
+    table_insert( table, el );
+
+  print_table( table );
+
+  std::cout << "\n\nFind val 55 : " << std::boolalpha << find_val( 55, table, 0, table[ 0 ].size() - 1 ) << std::endl;
+  std::cout << "Find val 67 : " << std::boolalpha << find_val( 67, table, 0, table[ 0 ].size() - 1 ) << std::endl;
 
   // Wait ...
   std::cin.get();
