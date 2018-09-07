@@ -118,37 +118,37 @@ void print_table(const t_table & tab )
 }
 
 
-//int main()
-//{
-//  auto table = table_create( 5 );
-//  auto randValues = generate_random_int_seq( 25 );
-//
-//  for ( auto el : randValues )
-//    table_insert(table, el);
-//
-//  print_table( table );
-//  std::cout << "Extract min : " << extract_min( table ) << std::endl;
-//  std::cout << std::endl;
-//
-//  print_table( table );
-//  std::cout << "Extract min : " << extract_min( table ) << std::endl;
-//  std::cout << std::endl;
-//
-//  print_table( table );
-//  std::cout << "Extract min : " << extract_min( table ) << std::endl;
-//  std::cout << std::endl;
-//
-//  print_table( table );
-//
-//  std::cout << "\n\nInsert into table 15, 20, 55" << std::endl;
-//  for ( auto el : { 15, 20 ,55 } )
-//    table_insert( table, el );
-//
-//  print_table( table );
-//
-//  std::cout << "\n\nFind val 55 : " << std::boolalpha << find_val( 55, table, 0, table[ 0 ].size() - 1 ) << std::endl;
-//  std::cout << "Find val 67 : " << std::boolalpha << find_val( 67, table, 0, table[ 0 ].size() - 1 ) << std::endl;
-//
-//  // Wait ...
-//  std::cin.get();
-//}
+int main()
+{
+  auto table = table_create( 5 );
+  auto randValues = generate_random_int_seq( 25 );
+
+  for ( auto el : randValues )
+    table_insert(table, el);
+
+  print_table( table );
+  std::cout << "Extract min : " << extract_min( table ) << std::endl;
+  std::cout << std::endl;
+
+  print_table( table );
+  std::cout << "Extract min : " << extract_min( table ) << std::endl;
+  std::cout << std::endl;
+
+  print_table( table );
+  std::cout << "Extract min : " << extract_min( table ) << std::endl;
+  std::cout << std::endl;
+
+  print_table( table );
+
+  std::cout << "\n\nInsert into table 15, 20, 55" << std::endl;
+  for ( auto el : { 15, 20 ,55 } )
+    table_insert( table, el );
+
+  print_table( table );
+
+  std::cout << "\n\nFind val 55 : " << std::boolalpha << find_val( 55, table, 0, table[ 0 ].size() - 1 ) << std::endl;
+  std::cout << "Find val 67 : " << std::boolalpha << find_val( 67, table, 0, table[ 0 ].size() - 1 ) << std::endl;
+
+  // Wait ...
+  std::cin.get();
+}
