@@ -5,7 +5,7 @@
 #include <vector>
 
 
-void partition( std::vector<int> & arr, int l, int r )
+int partition( std::vector<int> & arr, int l, int r )
 {
   int border = arr[ r ];
 
@@ -13,14 +13,16 @@ void partition( std::vector<int> & arr, int l, int r )
 
   for ( std::size_t i = l; i < r; ++i )
   {
-    if ( arr[ l ] < border )
+    if ( arr[ i ] <= border )
     {
       ++left;
-      std::swap( arr[ left ], arr[ l ] );
+      std::swap( arr[ left ], arr[ i ] );
     }
   }
 
   std::swap( arr[ left + 1 ], arr[ r ] );
+
+  return left + 1;
 }
 
 
@@ -28,16 +30,17 @@ void quick_sort( std::vector<int> & arr, int l, int r )
 {
   if ( l < r )
   {
-    quick_sort( arr, l, ( r - l ) / 2 );
-    quick_sort( arr, ( r - l ) / 2 + 1, r );
-    partition( arr, l, r );
+    int pos = partition( arr, l, r );
+
+    quick_sort( arr, l, pos - 1 );
+    quick_sort( arr, pos + 1, r );
   }
 }
 
 
 int main()
 {
-  auto arr = generate_random_int_seq( 5 );
+  auto arr = generate_random_int_seq( 10 );
 
   print_arr( arr );
 
