@@ -1,14 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(Chapter_6)
+project(Chapter_7)
 
-set(PROJECTS_TO_CREATE "max_heapify"
-                       "heap_sort"
-                       "task_6_2_5"
-                       "task_6_5_8"
-                       "task_6_5_9"
-                       "task_6_2"
-                       "young_table")
+set(PROJECTS_TO_CREATE "task_7_1_2"
+                       "task_7_1_4")
 
 ##################### Definitions #################################
 
