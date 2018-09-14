@@ -3,7 +3,12 @@ cmake_minimum_required(VERSION 2.8)
 project(Chapter_7)
 
 set(PROJECTS_TO_CREATE "task_7_1_2"
-                       "task_7_1_4")
+                       "task_7_1_4"
+                       "task_7_1"
+                       "task_7_2"
+                       "task_7_4"
+                       "task_7_5"
+                       "task_7_6")
 
 ##################### Definitions #################################
 

@@ -1,27 +1,23 @@
 
 #include "common.h"
 
-#include <vector>
 #include <iostream>
 
 
 int partition( std::vector<int> & arr, int l, int r )
 {
-  int b = arr[ r ];
-  int ri = l - 1;
+  int elem = r - l < 3 ? arr[r] 
+                       : ( arr[ r - 2 ] + arr[ r - 1 ] + arr[ r ] ) / 3;
 
-  for ( std::size_t i = l; i < r; ++i )
+  int idx = l - 1;
+
+  for ( int i = l; i <= r; ++i )
   {
-    if ( arr[ i ] >= b )
-    {
-      ++ri;
-      std::swap( arr[ i ], arr[ ri ] );
-    }
+    if ( arr[ i ] < elem )
+      std::swap( arr[ ++idx ], arr[ i ] );
   }
 
-  std::swap( arr[ ri + 1 ], arr[ r ] );
-
-  return ri + 1;
+  return idx;
 }
 
 
@@ -30,7 +26,7 @@ void quick_sort( std::vector<int> & arr, int l, int r )
   if ( l < r )
   {
     int q = partition( arr, l, r );
-    quick_sort( arr, l, q - 1 );
+    quick_sort( arr, l, q );
     quick_sort( arr, q + 1, r );
   }
 }
@@ -38,7 +34,7 @@ void quick_sort( std::vector<int> & arr, int l, int r )
 
 int main()
 {
-  auto arr = generate_random_int_seq( 10 );
+  auto arr = generate_random_int_seq( 20 );
 
   print_arr( arr );
 
@@ -48,3 +44,4 @@ int main()
 
   std::cin.get();
 }
+
